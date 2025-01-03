@@ -107,8 +107,15 @@ export function SidebarMenu() {
                                         >
                                             <AccordionItem value="item-1" className="m-0 p-0 font-normal">
                                                 <AccordionTrigger>
-                                                    <a key={menu.name} className="w-full flex justify-start text-xs font-normal h-10 bg-background my-2 items-center p-4 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-background rounded-md">
-                                                        <div className={cn("flex justify-between w-full [&[data-state=open]>svg]:rotate-180")}>
+                                                    <a
+                                                        key={menu.name}
+                                                        className="w-full flex justify-start text-xs font-normal h-10 bg-background my-2 items-center p-4 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white text-white rounded-md"
+                                                    >
+                                                        <div
+                                                            className={cn(
+                                                                "flex justify-between w-full [&[data-state=open]>svg]:rotate-180"
+                                                            )}
+                                                        >
                                                             <div className="flex">
                                                                 <div className="w-6">{menu.icon}</div>
                                                                 {menu.name}
@@ -119,7 +126,11 @@ export function SidebarMenu() {
                                                 </AccordionTrigger>
                                                 <AccordionContent>
                                                     {menu.submenu.map((submenu) => (
-                                                        <Link key={submenu.name} href={submenu.href} className="text-white mt-0 mb-0 flex text-xs h-10 bg-background dark:bg-background dark:hover:bg-primary dark:hover:text-background my-2 items-center p-4 hover:bg-primary hover:text-white rounded-md">
+                                                        <Link
+                                                            key={submenu.name}
+                                                            href={submenu.href}
+                                                            className="mt-0 mb-0 flex text-xs h-10 bg-background dark:bg-background my-2 items-center p-4 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white text-white rounded-md"
+                                                        >
                                                             <div className="w-6 text-white">{submenu.icon}</div>
                                                             {submenu.name}
                                                         </Link>
@@ -127,6 +138,7 @@ export function SidebarMenu() {
                                                 </AccordionContent>
                                             </AccordionItem>
                                         </Accordion>
+
                                     ) : (
                                         <div key={menu.name}>
                                             <Link href={menu.href} className="flex text-xs h-10 bg-background dark:bg-background my-2 items-center p-4 hover:bg-primary dark:hover:bg-primary dark:hover:text-background hover:text-white rounded-md text-white">
